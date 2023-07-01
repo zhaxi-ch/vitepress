@@ -19,8 +19,10 @@ export default defineConfig({
      { text: '运维相关',
       items: [
         { text: '名词解释', link: '/yunwei/basicalkn/' },
-        { text: '服务侧运维', link: '/yunwei/network/' },
-        { text: '网络侧运维', link: '/yunwei/network/' }
+        { text: '服务侧运维', link: '/yunwei/server/' },
+        { text: '网络侧运维', link: '/yunwei/network/' },
+        { text: '数据库运维', link: '/yunwei/sql/'},
+        { text: '其他内容', link: '/yunwei/other/' }
       ]},
       { text: '学习内容' ,
       items: [
@@ -32,16 +34,22 @@ export default defineConfig({
         text: '日常记录',
         items: [
           { text: 'Linux相关', link: '/workrecord/linux/' },
-          { text: 'MySQL相关', link: '/workrecord/mysql/' }
+          { text: 'MySQL相关', link: '/workrecord/mysql/' },
+          { text: '网络侧运维', link: '/yunwei/network/' },
+          { text: '数据库运维', link: '/yunwei/sql/'},
+
         ]
       },
 
       { text: 'Guide', link: '/guide/', activeMatch: '/guide/what-is-vitepress' },
       {
-        text: '下拉选择框',
+        text: 'Develop相关',
         items: [
-          { text: 'options-1', link: '/' },
-          { text: 'options-2', link: 'http://www.baidu.com' }
+          { text: 'Spring 方面', link: '/devm/java/spring/' },
+          { text: '工具和框架', link: '/devm/java/tool/' },
+          { text: 'Java', link: '/devm/java/' },
+          { text: 'Java 语法', link: '/devm/java/jichu/' },
+          { text: '设计模式', link: '/devm/design/' }
         ]
       }
     ],
@@ -59,6 +67,16 @@ export default defineConfig({
         { text: '网络运维', link: '/yunwei/network/' }
       ]
     },
+    {
+      text: '开发相关',
+      items: [
+        { text: 'NodeJS', link: '/devm/node/' },
+       
+      ]
+    },
+
+
+
 
    ],
 
