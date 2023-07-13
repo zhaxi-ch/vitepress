@@ -58,7 +58,8 @@ export default defineConfig({
     { text: 'es6', link: '/study/es6/' },
     { text: 'blog', link: '/study/zhaxiblog/' },
     { text: 'page', link: '/study/zhaxiblog/gitpage/' },
-    { text: 'git相关', link: '/study//git/' },
+    { text: 'git相关', link: '/study/git/' },
+    { text: 'Github', link: '/study/github/' },
     {
       text: '运维相关',
       items: [
