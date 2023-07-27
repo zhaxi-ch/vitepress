@@ -49,7 +49,8 @@ export default defineConfig({
           { text: '工具和框架', link: '/devm/java/tool/' },
           { text: 'Java', link: '/devm/java/' },
           { text: 'Java 语法', link: '/devm/java/jichu/' },
-          { text: '设计模式', link: '/devm/design/' }
+          { text: '设计模式', link: '/devm/design/' },
+          { text: '练习例子', link: '/devm/java/example/' },
         ]
       }
     ],
@@ -72,6 +73,7 @@ export default defineConfig({
       text: '开发相关',
       items: [
         { text: 'NodeJS', link: '/devm/node/' },
+        { text: '练习例子', link: '/devm/java/example/' },
        
       ]
     },

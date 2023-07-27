@@ -108,3 +108,31 @@ YAML 是一种流行的编程语言，因为它的设计人类可读，易于理
 
 ### 结论
 如果没有强烈的第三方扩展性需求，YAML是配置文件的最佳选项。当然，为此付出的代价，就是一开始需要手写一点点序列化/反序列化代码。
+
+## 使用VScode 创建和运行java  maven的项目
+
+### 1.安装maven,完成后确认安装的版本
+![maven版本](./maven_version.png)
+
+### 2.安装JAVA相关插件
+
+通过Java Extension Pack为VS CODE安装这些插件：
+
+    Language Support for Java(TM) by Red Hat
+    Debugger for Java
+    Java Test Runner
+    Maven for Java
+    Java Dependency Viewer
+### 3.vscode空白处点击右键选择【从maven原型创建新项目】
+![maven版本](./Maven_new.png)
+
+### 4.创建项目窗口中可以选择快速创建项目,选择版本
+### 5.填写项目的组织，一般是公司域名的倒写
+> Maven的基本工作单元POM（Project Object Model）项目对象模型
+
+## maven 的事业
+
+### 查询maven的本地仓库的路
+```
+mvn help:effective-settings
+```

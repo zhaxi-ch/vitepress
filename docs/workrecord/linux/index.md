@@ -31,6 +31,12 @@ date '+%c'
 systemctl list-unit-files |grep enabled
 ```
 
+#### 6.修改一个文件到所属的组   
+```
+sudo chgrp test test.txt
+```
+
+
 ### 5.1 关闭指定程序的开机自启动
 
 
@@ -40,6 +46,26 @@ cut -d : -f 1 /etc/passwd
 #### 7.查询系统可以登录的账户
 
 cat /etc/passwd | grep -v /sbin/nologin | cut -d : -f 1
+
+### 7.修改当前的DNS--（临时修改）
+查询命令 cat /etc/resolv.conf
+修改 的话，更改该文件内部的nameserver
+
+### 8.查询进程占用资源的
+查询内容占用前十名
+ps aux | sort  -k4nr | head -10
+
+查询CPU 占用前十名
+
+ps aux | sort  -k3nr | head -10
+### 9.自动更新程序导致内存大量被占用(Ubutun OS 22)
+
+关闭命令
+
+sudo systemctl disable unattended-upgrades.service
+
+### 10.查询正在运行的端口
+sudo ss -tulpn | grep LISTEN
 
 
 
@@ -80,3 +106,38 @@ exit
 9 - 重启你的系统
 
 reboot
+
+
+
+-------
+##  ubuntu 22 LTS 版本
+#### 1.查询Ubuntu的版本和信息
+  使用命令 cat /etc/os-release  或者 hostnamectl 
+#### 2.查询内核信息
+   使用命令  uname -r
+
+#### 3.apt 安装bind
+```
+sudo apt-get install bind9-host dnsutils
+sudo apt-get install bind9
+
+```
+#### 4. 重启bind 命令
+sudo systemctl restart bind9.service
+
+#### 5. 测试正向区域文件,请使用如下命令
+```
+named-checkzone example.com /etc/bind/db.example.com
+
+```
+
+### 故障排除
+1.** server can't find www.baidu.com: REFUSED
+   
+
+2. 监听查询命令
+
+sudo tcpdump  -n -i  ens160 host  172.19.172.188  and port  53
+
+3.修改所属组
+sudo  chgrp  bind  bind.keys
