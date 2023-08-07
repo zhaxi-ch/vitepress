@@ -136,3 +136,19 @@ YAML 是一种流行的编程语言，因为它的设计人类可读，易于理
 ```
 mvn help:effective-settings
 ```
+
+### 在VScode的终端中，使用以下命令将jar文件安装到本地Maven仓库：
+```
+mvn install:install-file -Dfile=/path/to/your-jar-file.jar -DgroupId=com.example -DartifactId=your-jar-file -Dversion=1.0.0 -Dpackaging=jar
+
+```
+
+在 Maven 中，有几种不同的作用范围可供选择，其中包括：
+
+- compile：默认的作用范围，表示依赖项在编译、测试和运行时都可用。
+- test：表示依赖项仅在测试代码编译和执行测试时可用，不会包含在最终的构建产物中。
+- provided：表示依赖项在编译和测试时可用，但在运行时由容器（如应用服务器）提供，不会包含在最终的构建产物中。
+- runtime：表示依赖项仅在运行时可用，不会参与编译和测试。
+- system：类似于 provided，但需要显式指定依赖项的路径，不会从 Maven 仓库中获取。
+
+对于 <scope>test</scope>，它表示该依赖项仅在测试代码编译和执行测试时可用，不会包含在最终的构建产物中。这通常用于引入测试框架、测试工具或其他仅在测试阶段使用的库

@@ -73,7 +73,7 @@ value：
 
 2）NS资源记录
 
-名称服务器（NS）资源记录表示该区的授权服务器，它们表示SOA资源记录中指定的该区的主和辅助服务器，也表示了任何授权区的服务器。每个区在区根处至少包含一个NS记录,每个NS在后续都应该有一个A记录
+名称服务器（NS : name  server）资源记录表示该区的授权服务器，它们表示SOA资源记录中指定的该区的主和辅助服务器，也表示了任何授权区的服务器。每个区在区根处至少包含一个NS记录,每个NS在后续都应该有一个A记录
 
 
 name ： 当前区域的名字
@@ -223,10 +223,42 @@ NS记录：
 	2.每个NS资源记录都必须要有一个A记录与之对应；
 
 
+### 7.  DNS 协议
+使用命令  resolvectl status
 
+ LLMNR (Link-Local Multicast Name Resolution) 是一种用于在本地网络中解析主机名的协议。它允许设备通过多播方式发送主机名查询，以获取对应的 IP 地址。LLMNR 主要用于 IPv4 网络中，当设备无法通过 DNS 解析主机名时，可以使用 LLMNR 进行本地解析。
 
+- mDNS (Multicast DNS) 是一种用于在局域网中解析主机名的协议。它通过多播方式广播主机名和 IP 地址的映射关系，使得设备可以通过主机名进行通信，而无需依赖中央 DNS 服务器。mDNS 主要用于小型网络环境，例如家庭网络或者小型办公室网络。
 
+- DNSOverTLS (DNS over TLS) 是一种通过 TLS (Transport Layer Security) 加密协议来保护 DNS 查询和响应的方法。它通过在 DNS 查询和响应的传输过程中使用 TLS 加密，确保数据的机密性和完整性。DNSOverTLS 可以提供更安全的 DNS 通信，防止中间人攻击和数据篡改。
 
+两者之间的区别如下：
+
+- LLMNR 和 mDNS 都是用于在局域网中解析主机名的协议，但它们使用不同的机制。LLMNR 使用 IPv4 的多播地址进行查询，而 mDNS 使用 IPv4 或 IPv6 的多播地址进行广播。
+
+- LLMNR 主要用于 IPv4 网络，而 mDNS 可以同时支持 IPv4 和 IPv6 网络。
+
+- DNSOverTLS 是一种用于保护 DNS 查询和响应的加密协议，它可以与 LLMNR 或 mDNS 一起使用。DNSOverTLS 提供了更高的安全性，可以防止网络监听和数据篡改。
+
+综上所述，LLMNR 和 mDNS 是用于在局域网中解析主机名的协议，而 DNSOverTLS 是一种用于保护 DNS 通信的加密协议。它们在机制、适用网络和安全性方面存在一些区别
+### 7.APPArmor 模块
+> AppArmor 是一个 Linux 安全模块，用于限制应用程序的访问权限。它的目的是增强系统的安全性，通过限制应用程序的行为来减少潜在的安全风险。
+AppArmor 使用一种基于配置文件的方法来定义应用程序的访问规则。这些规则指定了应用程序可以访问的文件、目录、网络端口等资源。当应用程序尝试访问未经授权的资源时，AppArmor 会阻止该访问并记录相关的安全事件。
+要关闭或禁用 AppArmor，你可以按照以下步骤操作
+```
+  sudo systemctl stop apparmor   关闭改成程序
+   sudo systemctl disable apparmor  禁用该程序
+```
+在查询 AppArmor 状态时，可能会得到以下几种状态值的解释：
+
+- apparmor module is loaded.：表示 AppArmor 模块已加载，即 AppArmor 正在运行。
+- apparmor module is not loaded.：表示 AppArmor 模块未加载，即 AppArmor 未启动。
+- apparmor module is not installed.：表示系统未安装 AppArmor 模块，因此无法使用 AppArmor 功能。
+- apparmor is enabled and active.：表示 AppArmor 已启用且处于活动状态，应用程序的访问将受到 AppArmor 的限制。
+- apparmor is enabled but inactive.：表示 AppArmor 已启用但处于非活动状态，应用程序的访问不受 AppArmor 的限制。
+- apparmor is not enabled.：表示 AppArmor 未启用，应用程序的访问不受 AppArmor 的限制。
+
+这些状态值可以帮助你了解系统中 AppArmor 的当前状态和是否对应用程序的访问进行了限
 
 
 ### 报错信息
@@ -240,3 +272,8 @@ NS记录：
 hrony是一款开源的网络时间同步软件，它可以通过网络协议（如NTP、UDP、TCP等）与时间服务器进行通信，从而同步本地系统的时间。与传统的NTP软件相比，chrony具有更高的精度和更快的同步速度，同时还支持多种时钟源和时钟调整算法，可以适应不同的网络环境和需求。在CentOS上安装chrony非常简单，只需要在终端中执行以下命令即可：
 
 ### 代理上网服务器的开源实现
+### Ubuntu 
+
+### Ubuntu下搭建DNS服务器 (DNSmap)
+
+DNS性能测试工具：使用专门的DNS性能测试工具，例如dnsperf或dnstop，来进行更详细的DNS性能测试。这些工具可以模拟大量的DNS查询并测量响应时间、吞吐量等指标
