@@ -87,3 +87,45 @@ git commit -m "Add .gitignore file"
 git rm -r --cached node_modules
 ```
 其中，filename 是您要删除的文件名。这将从 Git 中删除该文件，但不会删除实际的文件。希望这可以帮助您解决问题 
+
+### 要在GitHub上合并其他分支，你可以按照以下步骤进行操作：
+
+1. 首先，确保你已经克隆了你要合并的仓库到本地。你可以使用以下命令克隆仓库：
+```
+git clone <repository_url>
+```
+其中 repository_url是仓库的URL。
+
+2. 进入克隆的仓库目录：
+
+其中 repository_directory是仓库的本地目录。
+
+3. 确保你当前所在的分支是要合并其他分支的目标分支。你可以使用以下命令查看当前分支：
+```
+   git branch
+```
+如果当前分支不是目标分支，请切换到目标分支：
+
+其中 target_branch是目标分支的名称。
+
+4. 执行合并操作。你可以使用以下命令将其他分支合并到目标分支：
+```
+   git merge <other_branch>
+```
+其中 other_branch是要合并的其他分支的名称。
+
+5. 解决合并冲突（如果有）。如果在合并过程中出现冲突，你需要手动解决冲突。Git会在冲突的文件中标记出冲突的部分，你需要编辑这些文件并选择保留哪些更改。
+
+6. 提交合并结果。在解决冲突后，使用以下命令提交合并结果：
+```
+   git commit -m "Merge <other_branch> into <target_branch>"
+```
+其中 other_branch是要合并的其他分支的名称，target_branch是目标分支的名称。
+
+7. 将合并结果推送到GitHub仓库。使用以下命令将合并结果推送到GitHub仓库：
+```
+git push origin <target_branch>
+```
+其中 target_branch 是目标分支的名称。
+
+完成上述步骤后，你就成功地将其他分支合并到了目标分支，并将合并结果推送到了GitHub仓库。

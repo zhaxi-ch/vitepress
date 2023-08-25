@@ -277,3 +277,92 @@ hrony是一款开源的网络时间同步软件，它可以通过网络协议（
 ### Ubuntu下搭建DNS服务器 (DNSmap)
 
 DNS性能测试工具：使用专门的DNS性能测试工具，例如dnsperf或dnstop，来进行更详细的DNS性能测试。这些工具可以模拟大量的DNS查询并测量响应时间、吞吐量等指标
+1. 安裝服務 sudo apt install dnsmasq
+2. 编辑/etc/dnsmasq.conf文件
+sudo nano /etc/dnsmasq.conf
+3. 重啓服務  sudo systemctl restart dnsmasq
+
+
+###  普罗米修斯
+Prometheus(由go语言(golang)开发)是一套开源的监控&报警&时间序列数据库的组合。适合监控容器平台。因为
+kubernetes(俗称k8s)的流行带动了prometheus的发展。以下链接Prometheus官方文档。
+https://prometheus.io/docs/introduction/overview/
+
+#### 将node-export 设置为服务
+```
+[root@localhost system]# pwd
+/usr/lib/systemd/system
+[root@localhost system]# cat node-exporter.service 
+   [Unit]
+   Description=Node Exporter
+   Wants=network-online.target
+   After=network-online.target
+
+   [Service]
+   Restart=on-failure
+   ExecStart=/usr/local/node_exporter/node_exporter
+
+   [Install]
+   WantedBy=multi-user.targe
+[root@localhost system]# 
+
+```
+1. /usr/lib/systemd/system目录：
+- 作用：该目录用于存储系统安装的软件包提供的Systemd服务单元文件。
+- 区别：这些服务单元文件通常是由软件包的开发者或发行版维护者提供的，并且在软件包安装时自动放置在该目录中。这些服务单元文件通常不应由系统管理员手动修改，因为它们可能会在软件包更新时被覆盖。
+
+2. /etc/systemd/system目录：
+- 作用：该目录用于存储系统管理员自定义的Systemd服务单元文件。
+- 区别：这些服务单元文件是由系统管理员手动创建或修改的，用于定义自定义的Systemd服务。系统管理员可以在该目录中创建自己的服务单元文件，并使用systemctl命令来管理这些自定义服务。这些自定义服务单元文件不会被软件包的安装或更新所影响，因此可以用于管理自定义的系统服务。
+3.重置启动命令
+ systemctl   daemon-reload
+
+
+总结：
+/usr/lib/systemd/system目录用于存储由软件包提供的Systemd服务单元文件，而/etc/systemd/system目录用于存储系统管理员自定义的Systemd服务单元文件。这两个目录的区别在于文件的来源和管理方式。
+
+###  LDAP 服务器的搭建
+要在企业内部搭建一个LDAP服务器，你可以使用一些开源的解决方案来实现。其中，OpenLDAP 是一个广泛使用的开源LDAP服务器，适用于各种规模的组织。以下是在企业内部搭建LDAP服务器的基本步骤：
+
+步骤 1：准备
+
+    选择服务器： 选择一台服务器用于安装和运行LDAP服务器。这可以是物理服务器或虚拟机，根据你的需求和资源来决定。
+
+    选择操作系统： 选择一个适合你的LDAP服务器的操作系统，常见选择包括 Linux 发行版（如 Ubuntu、CentOS）。
+
+步骤 2：安装 OpenLDAP
+
+    安装 OpenLDAP： 使用操作系统的包管理工具，安装 OpenLDAP 服务器软件。例如，在 Ubuntu 上可以使用以下命令：
+
+    sudo apt-get update
+    sudo apt-get install slapd ldap-utils
+
+    按照提示设置管理员密码和其他配置。
+
+步骤 3：配置 OpenLDAP
+
+    配置 slapd.conf 或 cn=config： 在早期版本的 OpenLDAP 中，使用 slapd.conf 文件进行配置。然而，现代版本多数使用 cn=config 数据库进行配置。你可以使用 LDAP 客户端工具（如 ldapmodify）来进行配置。
+
+    创建基准 DN： 定义你的 LDAP 数据库的基准 DN，这是你的LDAP树的根。例如，dc=example,dc=com。
+
+    创建组织单位（OU）和用户： 使用 LDAP 工具创建组织单位和用户实体，以建立你的组织的层次结构。
+
+步骤 4：管理和维护
+
+    使用 LDIF 文件： LDIF（LDAP Data Interchange Format）文件是一种用于导入和导出 LDAP 数据的格式。你可以创建 LDIF 文件来批量添加、修改或删除条目。
+
+    备份和恢复： 定期备份 LDAP 数据，以防止意外数据丢失。你可以使用工具如 slapcat 来导出数据，然后使用 slapadd 来恢复。
+
+步骤 5：安全性和访问控制
+
+    访问控制： 配置适当的访问控制规则，以限制谁可以访问和修改LDAP数据。
+
+    加密和安全： 配置 LDAP 服务器以支持安全连接，使用 SSL/TLS 加密进行通信。
+
+步骤 6：集成和应用
+
+    应用集成： 在你的组织中，将 LDAP 用于身份验证和授权，如单点登录（SSO）等。
+
+    应用开发： 为应用程序和服务集成 LDAP，以实现用户和权限管理。
+
+请注意，搭建和管理LDAP服务器需要一定的技术知识和经验。确保在操作之前阅读相关文档和资源，并遵循最佳实践来确保LDAP服务器的安全和稳定运行。

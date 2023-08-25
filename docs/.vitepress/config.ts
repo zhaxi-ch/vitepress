@@ -22,12 +22,16 @@ export default defineConfig({
         { text: '服务侧运维', link: '/yunwei/server/' },
         { text: '网络侧运维', link: '/yunwei/network/' },
         { text: '数据库运维', link: '/yunwei/sql/'},
-        { text: '其他内容', link: '/yunwei/other/' }
+      { text: '数据库运维', link: '/yunwei/sql/'},
+      { text: 'Windows运维', link: '/yunwei/windows/'},
+        { text: '安全运维', link: '/yunwei/anquan/'}
       ]},
       { text: '学习内容' ,
       items: [
         { text: 'Vitepress', link: '/study/vitepress/' },
-        { text: '学习目标', link: 'https://notes.fe-mm.com/nav' }
+        { text: '学习目标', link: 'https://notes.fe-mm.com/nav' },
+        { text: '一问一答', link: '/study/qanda/' },
+        {text: 'mianshi ', link: '/study/mianshi/' }
       ]
     },
       {
@@ -61,6 +65,7 @@ export default defineConfig({
     { text: 'page', link: '/study/zhaxiblog/gitpage/' },
     { text: 'git相关', link: '/study/git/' },
     { text: 'Github', link: '/study/github/' },
+    { text: 'personal', link: '/personal/' },
     {
       text: '运维相关',
       items: [

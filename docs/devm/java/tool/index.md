@@ -152,3 +152,66 @@ mvn install:install-file -Dfile=/path/to/your-jar-file.jar -DgroupId=com.example
 - system：类似于 provided，但需要显式指定依赖项的路径，不会从 Maven 仓库中获取。
 
 对于 <scope>test</scope>，它表示该依赖项仅在测试代码编译和执行测试时可用，不会包含在最终的构建产物中。这通常用于引入测试框架、测试工具或其他仅在测试阶段使用的库
+
+###  Linux 配置JAVA_HOME 
+#如果开发java应用，经常需要配置JAVA_HOME路径，如果是通过yum安装的jdk（一般系统会自带open-jdk），下面讲述配置过程：
+ 
+#A 定位JDK安装路径
+ 
+1. 终端输入：
+ 
+which java
+#输出为：
+#/usr/bin/java
+ 
+ 
+#2. 终端输入：
+ 
+ls -lr /usr/bin/java
+#输出为：
+#/usr/bin/java -> 
+ 
+ 
+ 
+3. 终端输入
+ 
+ls -lrt /etc/alternatives/java
+#输出：
+#/etc/alternatives/java -> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/bin/java
+ 
+ 
+ 
+#至此，我们确定java的安装目录为： /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64
+ 
+ 
+ 
+#B 配置JAVA_HOME
+ 
+#1. 打开配置环境变量的文件
+ 
+ vi /etc/profile
+ 
+ 
+#2. 添加以下配置：
+ 
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.362.b08-1.el7_9.x86_64
+export JRE_HOME=$JAVA_HOME/jre
+export CLASSPATH=$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+# :wq保存退出。
+ 
+#3. 让配置生效
+ 
+source  /etc/profile
+ 
+ 
+#4. 测试配置结果
+echo $JAVA_HOME
+
+### 使用WEB页面创建Spring boot的项目
+
+
+首先，确保您已经安装了Java、Maven和Spring Boot开发环境。
+1. 创建一个新的Spring Boot项目
+
+使用Spring Initializr（https://start.spring.io/）创建一个新的Spring Boot项目。选择您喜欢的项目元数据，然后在"Dependencies"中添加"Spring Web"和"Thymeleaf"以及其他您可能需要的依赖项。下载生成的项目压缩包并解压。

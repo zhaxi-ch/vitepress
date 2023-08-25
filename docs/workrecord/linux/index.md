@@ -210,8 +210,5 @@ sudo  chgrp  bind  bind.keys
  sudo rm -rf /etc/bind
  *  清理残留文件
     sudo apt autoremove
-1. 安裝服務 sudo apt install dnsmasq
-2. 编辑/etc/dnsmasq.conf文件
-sudo nano /etc/dnsmasq.conf
-3. 重啓服務  sudo systemctl restart dnsmasq
+
 
