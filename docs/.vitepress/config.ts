@@ -15,16 +15,21 @@ export default defineConfig({
     i18nRouting: false,
     logo: '/log.png',
     nav: [
-
+      { text: '快速参考',
+      items: [
+        { text: 'ES6', link: '/quickref/es6/' },
+        { text: 'Docker', link: '/quickref/docker/' },
+        { text: 'Linux命令', link: '/quickref/linuxcommand/' },
+      ]},
      { text: '运维相关',
       items: [
         { text: '名词解释', link: '/yunwei/basicalkn/' },
         { text: '服务侧运维', link: '/yunwei/server/' },
         { text: '网络侧运维', link: '/yunwei/network/' },
         { text: '数据库运维', link: '/yunwei/sql/'},
-      { text: '数据库运维', link: '/yunwei/sql/'},
-      { text: 'Windows运维', link: '/yunwei/windows/'},
-        { text: '安全运维', link: '/yunwei/anquan/'}
+        { text: 'Windows', link: '/yunwei/windows/'},
+        { text: '安全运维', link: '/yunwei/anquan/'},
+        { text: '其他方面', link: '/yunwei/other/'},
       ]},
       { text: '学习内容' ,
       items: [

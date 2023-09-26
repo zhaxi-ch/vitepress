@@ -182,6 +182,14 @@ ss -tuln | grep <端口号>
 ### 9.修改ubuntu的仓库源
 将所有常用镜像源保存在/etc/apt目录下，并命名为类似source.list.aliyun的形式，需要使用时直接复制替换source.list文件即可。
 
+### 10. 查询账户的信息
+sudo id 用户名
+将"用户名"替换为您要查询的实际用户名。执行此命令后，将显示有关该用户的账户信息，包括用户ID、所属组、组ID等。
+
+### 11.查询所在目录的挂载情况
+  df -h /var/lib/docker
+
+
 
 ### 故障排除
 1.** server can't find www.baidu.com: REFUSED

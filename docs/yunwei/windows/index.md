@@ -1,3 +1,25 @@
+### 日常使用
+
+####  硬盘检测
+我们在检测硬盘分区读写性能的时候，可以使用win10 自带的测试命令来测试。此硬盘的最大读写性能！
+
+     在左下角搜索框输入“cmd”，并点击“以管理员身份运行”。
+    输入命令“winsat disk -drive 盘符”，并点击“回车”。例如
+
+ winsat disk -drive  c
+
+红色框结果为：
+
+从上到下，分别是：
+* 随机读取速度:  303MB/s  
+* 顺序读取速度: 1203MB/s
+*  顺序写入速度:  176MB/s
+
+
+![磁盘](./diskspeed.jpg)
+
+
+
 ### Windows 操作相关
 
 #### 1.Windows下如何查看某个端口被谁占用
@@ -78,6 +100,54 @@ echo 一天前的日期是：%one_day_ago%
 forfiles /p "%scan_dir%" /s /m * /d -1   /c "cmd /c if @isdir==FALSE del (del @path & echo Deleted: @path >> "%log_file%")
 
 pause
+
+
+```
+
+#### 获取指定目录内容是否存list中的文件
+```
+@echo off
+
+:: 设置目录路径
+set source_directory=D:\Image\SEIC
+
+set destination_directory=D:\Image\ok
+set list_file=D:\Image\file.txt
+
+for /f %%i in (%list_file%) do (
+    if exist "%source_directory%\%%i" (
+        echo %%i exists in %source_directory%
+       
+    ) else (
+        echo %%i does not exist in %source_directory%
+    )
+)
+echo DONE!
+pause
+
+```
+
+#### 5.将list 中指定的文件复制到指定的目录文件
+```
+@echo off
+
+:: 设置目录路径
+set source_directory=D:\Image\SEIC
+
+set destination_directory=D:\Image\ok
+set list_file=D:\Image\file.txt
+
+for /f %%i in (%list_file%) do (
+    if exist "%source_directory%\%%i" (
+        echo %%i exists in %source_directory%
+        xcopy "%source_directory%\%%i" "%destination_directory%" /I /Y
+    ) else (
+        echo %%i does not exist in %source_directory%
+    )
+)
+echo DONE!
+pause
+
 
 
 ```

@@ -284,6 +284,13 @@ sudo nano /etc/dnsmasq.conf
 
 
 ###  普罗米修斯
+
+1.prometheus： 监控系统，负责指标的收取和一些告警规则的定义	 	 	 	 	 	 	 	 	 
+2.snmp-exporter: 用于通过snmp协议暴露交换机的相关指标	 	 	 	 	 	 	 	 	 	 
+3.SNMP Exporter Config Generator： 此配置生成器使用NetSNMP解析MIB，并使用它们为snmp_exporter生成配置–帮助生成snmp的配置文件	 	 	 
+4.MIB和OID： MIB是管理信息库的缩写，它是用于管理通信网络中的实体的数据库。数据库是分层的（树形结构），并且每个条目都通过对象标识符（OID）进行寻址
+5.snmp协议： SNMP 是专门设计用于在 IP 网络管理网络节点（服务器、工作站、路由器、交换机及HUBS等）的一种标准协	  
+
 Prometheus(由go语言(golang)开发)是一套开源的监控&报警&时间序列数据库的组合。适合监控容器平台。因为
 kubernetes(俗称k8s)的流行带动了prometheus的发展。以下链接Prometheus官方文档。
 https://prometheus.io/docs/introduction/overview/
@@ -365,4 +372,37 @@ https://prometheus.io/docs/introduction/overview/
 
     应用开发： 为应用程序和服务集成 LDAP，以实现用户和权限管理。
 
-请注意，搭建和管理LDAP服务器需要一定的技术知识和经验。确保在操作之前阅读相关文档和资源，并遵循最佳实践来确保LDAP服务器的安全和稳定运行。
+
+
+## log收集侧运维
+
+    痛点1: 生产出现故障后，运维需要不停的查看各种不同的日志进行分析?是不是毫无头绪?
+
+　　痛点2: 项目上线出现错误，如何快速定位问题?如果后端节点过多、日志分散怎么办?
+
+　　痛点3: 开发人员需要实时查看日志但又不想给服务器的登陆权限，怎么办?难道每天帮开发取日志?
+
+　　痛点4: 如何在海量的日志中快速的提取我们想要的数据?比如：PV、UV、TOP10的URL?如果分析的日志数据量大，那么势必会导致查询速度慢、难度增大，最终则会导致我们无法快速的获取到想要的指标。
+
+　　痛点5: CDN公司需要不停的分析日志，那分析什么?主要分析命中率，为什么?因为我们给用户承诺的命中率是90%以上。如果没有达到90%，我们就要去分析数据为什么没有被命中、为什么没有被缓存下来。
+
+　　痛点6: 近期某影视公司周五下午频繁出现被盗链的情况，导致异常流量突增2G有余，给公司带来了损失，那又该如何分析异常流量呢?
+
+　　痛点7: 上百台Mysql实例的慢日志查询分析如何聚集?
+
+　　痛点8: docker，K8S平台日志如何收集分析?
+
+## 通过Docker部署和安装ELK环境
+1. 安装Docker：首先，确保在你的机器上安装了Docker。根据你的操作系统，可以参考Docker的官方文档进行安装步骤。
+
+2. 获取ELK镜像：ELK的官方团队提供了预配置的Docker镜像，可以直接使用。你可以通过Docker命令或使用Docker Compose来获取镜像
+```
+docker pull docker.elastic.co/elasticsearch/elasticsearch:<version>
+docker pull docker.elastic.co/logstash/logstash:<version>
+docker pull docker.elastic.co/kibana/kibana:<version>
+
+---查询 dock
+
+
+
+```
