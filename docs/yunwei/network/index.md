@@ -34,3 +34,20 @@
 对于一般的磁盘，正常水平的I/O OPS和每秒磁盘读写值会根据具体的硬件规格、应用程序需求和负载情况而有所不同。一般来说，较低的I/O OPS和每秒磁盘读写值可能表示磁盘处于较轻的工作负载状态，而较高的值可能表示磁盘正在处理较重的工作负载。
 
 要确定正常水平的I/O OPS和每秒磁盘读写值，建议参考磁盘的规格和性能指标，以及监控工具或操作系统提供的性能数据。这样可以获得更具体和准确的参考值，并根据实际情况进行评估和调整。
+
+## 使用 Prometheus 监控MSS SQL的数据库
+
+### 1. 安装SQL-exporter 的程序
+
+> 参考资料
+ sql_exporter使用、采集器源码： https://github.com/free/sql_exporter 
+M SSQL简略仪表盘：https://grafana.com/grafana/dashboards/9336   
+更多、更高级的sql server采集指标：https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver?tdsourcetag=s_pctim_aiomsg
+ sql server 对象监控 参考：https://docs.microsoft.com/zh-cn/sql/relational-databases/performance-monitor/use-sql-server-objects?view=sql-server-ver15
+
+### 2. 下载文件，并且运行
+
+![下载地址](./github下载.png)
+
+### 3.将这个文件设置成一个程序，后台进行运行
+

@@ -149,6 +149,20 @@ docker restart kibana
 
 ```
 
+### 配置和使用kibana
+
+> TIPS：如何检测系统中是否启动了 kibana？   
+
+ 我们一般会用ps -ef来查询某个应用是否在 Linux系统中启动，  
+ 比如Elasticsearch，我们用 ps -ef|grep java 或者 ps -ef|grep elasticsearch均可  
+
+ELK入门及基本使用_字符串_20
+
+但是当我们尝试 ps -ef|grep kibana，却是不行的
+因为 kibana 是 node 写的，所以 kibana 运行的时候是运行在 node 里面，我们要查询的话，只能 ps -ef|grep node
+
+
+
 ### 配置logstash
 
 

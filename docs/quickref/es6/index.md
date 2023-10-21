@@ -7,7 +7,7 @@ ES2015+ 备忘清单
 ---
 
 ### 块范围
-<!--rehype:wrap-class=row-span-2-->
+<!-- rehype:wrap-class=row-span-2 -->
 
 #### Let
 
@@ -745,7 +745,7 @@ gen.next().value  // → 2
 ```
 
 情况很复杂。
-请参阅：[Generators](https://babeljs.io/learn-es2015/#generators)
+<!-- 请参阅：[Generators](https://babeljs.io/learn-es2015/#generators) -->
 
 ### For..of + 迭代器(iterator)
 <!--rehype:wrap-class=row-span-2-->
@@ -771,7 +771,7 @@ for (var n of fibonacci) {
 ```
 
 用于迭代生成器和数组。
-请参阅：[For..of iteration](https://babeljs.io/learn-es2015/#iterators--forof)
+<!-- 请参阅：[For..of iteration](https://babeljs.io/learn-es2015/#iterators--forof) -->
 
 ### 与 Iterator 接口的关系
 

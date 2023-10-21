@@ -20,6 +20,7 @@ export default defineConfig({
         { text: 'ES6', link: '/quickref/es6/' },
         { text: 'Docker', link: '/quickref/docker/' },
         { text: 'Linux命令', link: '/quickref/linuxcommand/' },
+        { text: 'Ansible', link: '/quickref/ansible/' },
       ]},
      { text: '运维相关',
       items: [
@@ -34,9 +35,13 @@ export default defineConfig({
       { text: '学习内容' ,
       items: [
         { text: 'Vitepress', link: '/study/vitepress/' },
+        { text: 'Mathematics', link: '/study/mathematics/' },
         { text: '学习目标', link: 'https://notes.fe-mm.com/nav' },
         { text: '一问一答', link: '/study/qanda/' },
-        {text: 'mianshi ', link: '/study/mianshi/' }
+        {text: 'mianshi ', link: '/study/mianshi/' },
+
+
+
       ]
     },
       {

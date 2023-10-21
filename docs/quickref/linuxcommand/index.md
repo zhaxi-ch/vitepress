@@ -9,8 +9,7 @@ Linux 命令速查表
 ---
 
 ### 系统
-<!--rehype:wrap-class=row-span-2-->
-
+ >
 :--- | :---
 :--- | :---
 **`uname`** | 显示 linux 系统信息
@@ -26,10 +25,9 @@ Linux 命令速查表
 **`w`** | 显示系统中当前登录的用户
 **`whoami`** | 显示您的登录身份
 **`finger username`** | 显示有关用户的信息
-<!--rehype:className=style-list-->
 
 ### 硬件
-<!--rehype:wrap-class=row-span-2-->
+ >
 
 :--- | :---
 :--- | :---
@@ -46,7 +44,15 @@ Linux 命令速查表
 **`dmidecode`** | 显示BIOS中的硬件信息
 **`hdparm -tT /dev/xda <:code>`** | 在设备xda上进行读速度测试
 **`badblocks -s /dev/xda`** | 测试磁盘上不可读的块
-<!--rehype:className=style-list-->
+**`lspci -vnn grep VGA`** |  查询显卡的情况
+**`sudo apt install nvidia-driver-470`** | 安装Nvidia 显卡驱动程序
+**`nvidia-smi`** | 查询显卡的信息，如果驱动成功，会显示
+**`sudo apt install ubuntu-desktop`** | 安装桌面程序
+**`timedatectl set-timezone  Asia/Shanghai`** | 设置时区为上海
+
+
+
+
 
 ### 用户
 
@@ -59,7 +65,7 @@ Linux 命令速查表
 **`adduser "Sam"`** | 添加用户 Sam
 **`userdel "Sam"`** | 删除用户 Sam
 **`usermod`** | 用于更改/修改用户信息
-<!--rehype:className=style-list-->
+
 
 ### 登陆
 
@@ -69,10 +75,9 @@ Linux 命令速查表
 **`ssh -p port_number user@host`** | 使用指定端口安全地连接到主机
 **`ssh host`** | 通过SSH默认端口22安全连接到系统
 **`telnet host`** | 通过telnet默认端口23连接到主机
-<!--rehype:className=style-list-->
 
 ### 文件
-<!--rehype:wrap-class=row-span-4-->
+
 
 :--- | :---
 :--- | :---
@@ -96,10 +101,11 @@ Linux 命令速查表
 **`gpg file_name.gpg`** | 解密文件
 **`wc`** | 打印文件中的字节、单词和行数
 **`xargs`** | 从标准输入执行命令
-<!--rehype:className=style-list-->
+**`sha256sum   yarn.lock` ** | 显示指定文件的hash 256值
+
 
 ### 进程
-<!--rehype:wrap-class=row-span-3-->
+
 
 :--- | :---
 :--- | :---
@@ -113,11 +119,11 @@ Linux 命令速查表
 **`bg`** | 将一个在后台暂停的命令，变成继续执行
 **`fg`** | 将后台中的命令调至前台继续运行
 **`fg n`** | job n to the foreground
-**`lsof`** | 列出进程打开的文件 [#](./lsof.md)
+**`lsof`** | 列出进程打开的文件 
 **`renice 19 PID`** | 使进程以非常低的优先级运行
 **`pgrep firefox`** | 查找Firefox进程ID
 **`pstree`** | 在树模型中可视化过程
-<!--rehype:className=style-list-->
+
 
 ### 安装包
 
@@ -126,7 +132,7 @@ Linux 命令速查表
 **`rpm -i pkg_name.rpm`** | 安装 rpm 包
 **`rpm -e pkg_name`** | 删除 rpm 包
 **`dnf install pkg_name`** | 使用 dnf 工具安装软件包
-<!--rehype:className=style-list-->
+
 
 ### 文件权限
 
@@ -139,7 +145,7 @@ Linux 命令速查表
 **`chown owner user-file`** | 更改文件的所有权
 **`chown owner-user:owner-group file_name`** | 更改文件的所有者和组所有者
 **`chown owner-user:owner-group directory`** | 更改目录的所有者和组所有者
-<!--rehype:className=style-list-->
+
 
 ### 安装源(编译)
 
@@ -148,7 +154,7 @@ Linux 命令速查表
 **`./configure`** | 检查系统，以获得构建程序所需的软件。它将构建包含有效构建项目所需的指令的Makefile
 **`make`** |
 **`make install`** | 编译后，该命令将二进制文件安装在默认/修改的路径中
-<!--rehype:className=style-list-->
+
 
 ### 压缩/打包
 
@@ -158,7 +164,7 @@ Linux 命令速查表
 **`tar -xf files.tar`** | 解压档案文件"files.tar"
 **`tar -zcvf home.tar.gz source-folder`** | 从源文件夹创建压缩的tar存档文件
 **`gzip file`** | 压缩扩展名为.gz的文件
-<!--rehype:className=style-list-->
+
 
 ### 搜索
 
@@ -169,10 +175,10 @@ Linux 命令速查表
 **`locate file`** | 查找文件的所有实例
 **`find /home/ -name "index"`** | 在/home文件夹中查找以’index’开头的文件名
 **`find /home -size +10000k`** | 在主文件夹中查找大于10000k的文件
-<!--rehype:className=style-list-->
+
 
 ### 网络
-<!--rehype:wrap-class=row-span-3-->
+
 
 :--- | :---
 :--- | :---
@@ -187,7 +193,14 @@ Linux 命令速查表
 **`hostname -i`** | 显示本地IP地址
 **`wget file_name`** | 从在线资源下载文件
 **`netstat -pnltu`** | 显示所有活动监听端口
-<!--rehype:className=style-list-->
+**`sudo netstat -tunlp `|` grep ssh`** | 查询SSH 的工作端口
+**`sudo parted /dev/sdb print`** |  查询磁盘的信息
+**`hostname -i`** | 显示本地IP地址
+**` sudo nano /etc/apt/apt.conf.d/90curtin-aptproxy`** |取消掉 APt的 代理
+
+
+
+
 
 ### 文件传输
 
@@ -195,10 +208,10 @@ Linux 命令速查表
 :--- | :---
 **`scp file1.txt server2/tmp`** | 安全地将file1.txt复制到/tmp目录中的server2
 **`rsync -a /home/apps /backup/`** | 将/home/apps目录中的内容与/backup目录进行同步
-<!--rehype:className=style-list-->
+
 
 ### 磁盘使用情况
-<!--rehype:wrap-class=row-span-2-->
+
 
 :--- | :---
 :--- | :---
@@ -208,7 +221,11 @@ Linux 命令速查表
 **`du -sh`** | 以人类可读的格式显示当前目录中的磁盘使用情况
 **`findmnt`** | 显示所有文件系统的目标挂载点
 **`mount device-path mount-point`** | 挂载设备
-<!--rehype:className=style-list-->
+**`df -h /dev/ubuntu-vg/ubuntu-lv`** | 查询当前逻辑卷的大小
+**`sudo lvextend -r -l +100%FREE /dev/ubuntu-vg/ubuntu-lv`** | 逻辑卷的大小扩展到可用的最大空间。-r 选项将自动调整逻辑卷中的文件系统大小
+**`sudo  fdisk /dev/nvme1n1`** |  创建一个逻辑分区,并且输入指定数字进行创建，n,
+**`sudo  mkfs.ext4 /dev/nvme1n1p5`** |  格式化分区
+
 
 ### 目录遍历
 
@@ -217,13 +234,32 @@ Linux 命令速查表
 **`cd ..`** | 在目录树结构中向上移动一层
 **`cd`** | 将目录更改为$HOME目录
 **`cd /test`** | 将目录更改为/test目录
-<!--rehype:className=style-list-->
+
+
+###  其他命令
+
+
+:--- | :---
+:--- | :---
+
+**`crontab -e`   |  列出当前用户的定时任务列表，显示用户已经设置的 Cron 作业
+
+```
+crontab实际使用场景包括但不限于以下情况：
+
+    定期备份数据库或文件
+    执行系统维护任务，如清理临时文件、更新系统软件
+    自动化脚本任务，如定时生成报表、发送邮件或执行自定义的脚本
+    调度重复性任务，如定时爬取网页数据或更新网站内容
+```
+
+
 
 快捷键
 ---
 
 ### 命令行编辑
-<!--rehype:wrap-class=row-span-2-->
+ 
 
 :--- | :---
 :--- | :---
@@ -242,7 +278,7 @@ Ctrl+F (Right) | 光标右移（前进）
 Ctrl+H (Backspace) | 删除光标的前一个字符
 
 ### 其他
-<!--rehype:wrap-class=row-span-2-->
+ 
 
 :--- | :---
 :--- | :---
