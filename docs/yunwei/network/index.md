@@ -51,3 +51,19 @@ M SSQL简略仪表盘：https://grafana.com/grafana/dashboards/9336
 
 ### 3.将这个文件设置成一个程序，后台进行运行
 
+## 使用代理服务器进行部署上网
+如下是一些常用的代理的网址
+> archive.ubuntu.com  
+apt.kubernetes.io 
+asia-northeast2-docker.pkg.dev    
+auth.docker.io   
+cdn03.quay.io
+download.docker.com    
+esm.ubuntu.com    
+packages.cloud.google.com    
+prod-registry-k8s-io-ap-northeast-1.s3.dualstack.ap-northeast-1.amazonaws.com    
+production.cloudflare.docker.com    
+quay.io    
+registry-1.docker.io    
+registry.k8s.io    
+dl.k8s.io    

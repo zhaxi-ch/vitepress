@@ -8,10 +8,10 @@
 
 ### 工作技能
 #### 基本运维相关
-1. 能单独完成Windows 系统AD域，DNS，KMS,WDS,MDT，Wsus等的搭建和日常管理
+1. 能单独完成Windows AD域，DNS，KMS,WDS,MDT，Wsus等的搭建和日常管理
 2. 能单独完成Prometheus+Grafana监控的部署和日常管理，熟悉zabbix的搭建和使用
 3. 熟悉掌握Vmware ESXI，Vcente的安装，升级以及GuestOS的创建、管理，Veeam备份还原等维护的全过程
-4. 熟悉Centos和Ubuntu的常用命令，了解容器，docker compose ，ELK搭建和使用
+4. 熟悉Centos和Ubuntu的常用命令，了解容器，docker compose 以及ELK 的搭建和使用
 5. 了解
 ### 系统数据库相关
 1. 熟悉SQLserver和mysql的备份和还原，了解视图, 存储过程，触发器等的编写和使用
@@ -24,7 +24,7 @@
 ### 开发相关
 1. 熟悉 JavaScript 核心基础；掌握 ES6 常用语法；能使用Vue全家桶，Elementplus，Echarts，Axios进行前端开发
 2. 了解 Node.js和python，使用过Express 和 FastAPI的框架进行过简单API接口的的开发
-3. 了解Spring Boot的构成，能利用maven工具，进行Java WEB的开发
+3. 了解Spring Boot的构成，能利用maven工具，进行Java WEB小型项目的开发
 
 ### 工作经历
 2012年7月_______ 2018年5月    工程师    网络运维+Helpdesk运维         住友电工电子制品(深圳)有限公司
@@ -53,7 +53,7 @@
 
 
 
-
+```
 
 <template>
   <div class="content-bd">
@@ -522,11 +522,13 @@
   </div>
 </template>
 
+```
 
 
 
-
-
+* 东莞明仕汽车零部件有限公司    百花洞   
+* 锰磁科技    
+* 东莞台霖电子通讯
 
 
 
