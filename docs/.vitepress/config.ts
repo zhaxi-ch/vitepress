@@ -35,10 +35,12 @@ export default defineConfig({
       { text: '学习内容' ,
       items: [
         { text: 'Vitepress', link: '/study/vitepress/' },
-        { text: 'Mathematics', link: '/study/mathematics/' },
         { text: '学习目标', link: 'https://notes.fe-mm.com/nav' },
+        { text: '一问一答', link: '/study/english/' },
         { text: '一问一答', link: '/study/qanda/' },
         {text: 'mianshi ', link: '/study/mianshi/' },
+        { text: 'Mathematics', link: '/study/mathematics/' },
+        { text: 'Statistics', link: '/study/statistics/' },
 
 
 
@@ -50,8 +52,7 @@ export default defineConfig({
           { text: 'Linux相关', link: '/workrecord/linux/' },
           { text: 'MySQL相关', link: '/workrecord/mysql/' },
           { text: '网络侧运维', link: '/yunwei/network/' },
-          { text: '数据库运维', link: '/yunwei/sql/'},
-
+          { text: '胡乱日记', link: '/workrecord/diary/'},
         ]
       },
 
