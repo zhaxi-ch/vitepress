@@ -52,11 +52,14 @@ export default defineConfig({
           { text: 'Linux相关', link: '/workrecord/linux/' },
           { text: 'MySQL相关', link: '/workrecord/mysql/' },
           { text: '网络侧运维', link: '/yunwei/network/' },
-          { text: '胡乱日记', link: '/workrecord/diary/'},
+          { text: '天天日记', link: '/workrecord/diary/'},
         ]
       },
 
       { text: 'Guide', link: '/guide/', activeMatch: '/guide/what-is-vitepress' },
+
+
+      
       {
         text: 'Develop相关',
         items: [

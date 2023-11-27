@@ -181,7 +181,90 @@ I2C具有如下特点：
 
 ### Raspberry pi
 
+![Alt text](./Raspberry.png)
+
+## 2023年11月20日  星期一
+无内容
+
+## 2023年11月21日  星期二
+
+RTOS（实时操作系统）Real-Time Operating System   [！FreeRTOS](https://www.freertos.org/)
+
+>Nuttx是使用C和C++语言开发的。它是一个基于实时操作系统（RTOS）的嵌入式操作系统，专为资源受限的系统设计。Nuttx的代码主要由C语言编写，但也可以使用C++进行开发
+
+日常可以使用的RTOS包括FreeRTOS、UCOS、RT-Thread等
+* FreeRTOS 的描述
+FreeRTOS及其在意法半导体STM32平台，乐鑫科技ESP32平台和Arduino平台上的开发与运用。
+
+可实现：任务管理、时间管理、信号量、消息队列、内存管理、记录功能 
+>FreeRTOS 是一个可裁剪、可剥夺型的多任务内核，而且没有任务数限制。FreeRTOS 提供了实时操作系统所需的所有功能，包括资源管理、同步、任务通信等。
+FreeRTOS 是用 C 和汇编来写的，其中绝大部分都是用 C 语言编写的，只有极少数的与处理器密切相关的部分代码才是用汇编写的，FreeRTOS 结构简洁，可读性很强！最主要的是非常适合初次接触嵌入式实时操作系统学生、嵌入式系统开发人员和爱好者学习。
+最新版本 V9.0.0（2016年），尽管现在 FreeRTOS 的版本已经更新到 V10.4.1 了，但是我们还是选择 V9.0.0，因为内核很稳定，并且网上资料很多，因为 V10.0.0 版本之后是亚马逊收购了FreeRTOS之后才出来的版本，主要添加了一些云端组件，一般采用 V9.0.0 版本足以.   
+
+![结构图](./OS_int.png)
+
+## 2023年11月23日  星期四
+
+Linux 内核原理指的是Linux操作系统的核心组件，它是操作系统的基础，负责管理计算机的硬件资源，并提供了各种系统服务和功能。Linux内核被设计为开放源代码，因此任何人都可以查看、修改和扩展它。
+
+Linux内核原理涵盖了以下几个关键概念：
+
+    进程管理：Linux内核负责创建、调度和管理进程（程序的执行实例），包括分配资源、上下文切换和进程间通信等。
+    内存管理：内核跟踪和管理计算机的物理内存和虚拟内存，包括内存分页、页面置换和内存保护等。
+    文件系统：内核提供文件系统接口，用于管理文件和目录，包括文件权限、访问控制和磁盘空间分配等。
+    设备驱动程序：内核提供设备驱动程序接口，使应用程序能够访问计算机的硬件设备，如磁盘驱动器、网络接口卡等。
+    网络协议栈：内核实现了各种网络协议，如TCP/IP协议族，用于实现网络通信和互联网连接
+
+## 2023年11月24日  星期五
+
+Windows Presentation Foundation (WPF) 
+
+>Qt 是一个跨平台的开发框架，可以用于构建各种类型的应用程序，包括图形用户界面（GUI）应用程序。Qt 在开源社区中以 LGPL 许可证发布，这意味着你可以自由地使用 Qt 框架来开发软件，而不需要支付版权费用。
 
 
+## 2023年11月27日  星期一
+学习一下Winform 和 WPF 的区别
 
-![Alt text](./Raspberry%20.png)
+>**WINform Windows Forms**是一种基于传统Win32 API的技术，使用C#或VB.NET语言进行开发。它提供了一组用于创建用户界面的控件，如按钮、文本框、标签等。WINform使用事件驱动模型，在代码中处理用户交互，并且可与其他技术（如ADO.NET）结合使用。
+
+>**WPF（Windows Presentation Foundation**是一种更现代化、更强大的UI框架，也是使用C#或VB.NET进行开发。它采用XAML（可扩展应用程序标记语言）来描述用户界面，将界面和逻辑分离，使开发人员可以更灵活地设计应用程序的外观和行为。WPF还提供了强大的数据绑定、样式和动画功能，以及易于定制和扩展的控件模型。 
+
+XAML （ extensible  appliction Markup Lanague) 可拓展应用程序标记语言
+
+### WPF 的文件结构
+1. MainWindow.xaml 文件是WPF 应用程序的主窗口，它包含了应用程序的用户界面，
+2. APP.xaml 是WPF 应用程序级别资源文件，它可以定义应用程序范围内的资源，如样式，模板，转换等
+
+### Mahapps.Metro 框架的使用
+
+>来自德国公司开源的UI框架，专为WPF（Windows Presentation Foundation）应用程序设计。该框架提供了丰富的现代化UI控件和主题样式，旨在帮助开发人员快速构建具有吸引力和一致性的用户界面。
+
+**创建第一Mahapps的程序**   
+
+1. 安装MahApps.Metro 
+  首先创建一个WPF 项目，然后使用NUget来安装MahApps.Metro 的程序包
+
+  ![WPF](./dotnet/wpf1.1.png)
+2. 引用MahApps.metro 的命令空间   
+
+>namespace 是一种组织和管理代码的机制，它提供了一种将相关类，接口，结构和其他类型组织在一起的方式，以避免命名冲突
+点击工具--NUGet包管理器---管理解决方案的NU固态程序包
+  ![WPF](./dotnet/wpf1.2.png)
+
+3. 在线搜索下载这个Mahapps的包   
+
+![WPF](./dotnet/wpf1.3.png) 
+
+![WPF](./dotnet/wpf1.4.png)
+4. 使用MahApps.Metro的控件
+* 引用MahApps的命名空间
+在XAML文件中，添加对MahApps.Metro命名空间的引用。例如，在Window标签中添加xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"。
+
+*  替换默认的Windows类
+将默认的Window类替换为MahApps.Metro提供的MetroWindow类。在XAML文件中，将Window标签替换为metro:MetroWindow标签。在代码文件中，将继承的Window类替换为MetroWindow类  
+
+* 应用MahApps 的样式
+在App.xaml文件中，引用MahApps.Metro提供的内置样式。在Application.Resources标签内添加ResourceDictionary，并在其中添加对MahApps.Metro样式的引用。例如，添加<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml"/>。  
+
+* 使用 MashApps.Metro控件
+在XAML文件中使用MahApps.Metro提供的控件。例如，使用metro:Tile控件创建一个瓦片式按钮，或者使用metro:TreeView控件创建一个树形视图
