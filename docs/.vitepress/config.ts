@@ -36,7 +36,7 @@ export default defineConfig({
       items: [
         { text: 'Vitepress', link: '/study/vitepress/' },
         { text: '学习目标', link: 'https://notes.fe-mm.com/nav' },
-        { text: '一问一答', link: '/study/english/' },
+        { text: '单词学习', link: '/study/english/' },
         { text: '一问一答', link: '/study/qanda/' },
         {text: 'mianshi ', link: '/study/mianshi/' },
         { text: 'Mathematics', link: '/study/mathematics/' },
@@ -69,8 +69,20 @@ export default defineConfig({
           { text: 'Java 语法', link: '/devm/java/jichu/' },
           { text: '设计模式', link: '/devm/design/' },
           { text: '练习例子', link: '/devm/java/example/' },
+          { text: 'Dotnet', link: '/devm/dotnet/' },
         ]
-      }
+      },
+      {
+        text: '数据分析',
+        items: [
+          { text: 'ETL内容', link: '/datanalysis/etl/' },
+        ]
+      },
+    
+
+
+
+
     ],
    sidebar:[
     { text: 'Vitepress', link: '/study/vitepress/' },

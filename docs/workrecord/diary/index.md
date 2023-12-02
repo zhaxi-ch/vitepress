@@ -264,7 +264,100 @@ XAML （ extensible  appliction Markup Lanague) 可拓展应用程序标记语�
 将默认的Window类替换为MahApps.Metro提供的MetroWindow类。在XAML文件中，将Window标签替换为metro:MetroWindow标签。在代码文件中，将继承的Window类替换为MetroWindow类  
 
 * 应用MahApps 的样式
-在App.xaml文件中，引用MahApps.Metro提供的内置样式。在Application.Resources标签内添加ResourceDictionary，并在其中添加对MahApps.Metro样式的引用。例如，添加<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml"/>。  
+在App.xaml文件中，引用MahApps.Metro提供的内置样式。在Application.Resources标签内添加ResourceDictionary，并在其中添加对MahApps.Metro样式的引用。例如，添加<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml"/>
 
 * 使用 MashApps.Metro控件
 在XAML文件中使用MahApps.Metro提供的控件。例如，使用metro:Tile控件创建一个瓦片式按钮，或者使用metro:TreeView控件创建一个树形视图
+
+## 2023年11月28日  星期二
+
+今日发现pentaho 公司的开源商业软件。强调面向解决方案而非工具，基于JAVA 平台的商业智能（business  intellgence) 
+OLAP OnLine Analysis Processing   查询是一种用于多维数据分析的查询方法
+
+## 2023年11月28日  星期三
+
+1. 多维数据
+2. 聚合计算  求和，平均值，最大/最小值
+3. 分层分析
+4. 多维分析
+5. 快速响应
+
+学习 Microsoft SSDT  的使用
+
+Azure  data  lake  数据湖的概念
+```
+Apache Hadoop：Hadoop是一个开源的分布式计算框架，允许用户存储、分析和处理大量数据。
+Hadoop提供了一个类似于Data Lake的环境，称为Hadoop Distributed File System（HDFS），
+用于存储和管理数据。Hadoop还支持各种数据处理和分析工具，如MapReduce、Hive和Spark等。
+
+Apache Spark：Spark是另一个开源的大规模数据处理和分析框架，它提供了类似于Data Lake的功能。
+Spark可以在本地或集群环境中运行，支持各种数据源和数据格式，包括批处理和流处理。
+
+Apache Flink：Flink是一个开源的流处理和批处理框架，具有类似于Data Lake的功能。
+Flink可以在本地或集群环境中运行，支持各种数据源和数据格式，包括实时数据流和批处理数据。
+
+Apache Beam：Beam是一个开源的统一编程模型，用于处理批处理和流数据。
+Beam提供了一个类似于Data Lake的环境，称为Beam Data Lake，用于存储和管理数据。
+Beam还支持各种数据处理和分析工具，可以在本地或云端环境中运行。
+
+Ceph：Ceph是一个开源的分布式存储系统，设计用于存储大量数据，并提供高性能、可扩展和可靠的存储解决方案。
+Ceph可以作为一个类似于Data Lake的环境来使用，支持各种数据源和数据格式。
+
+```
+
+
+## 2023年11月30日  星期四
+
+学习了一下Openstack 的历史，来自Nasa的项目
+
+
+## 2023年12月01日  星期五
+
+学习SSIS 的内容
+
+构建企业级的数据集成 和数据转换，数据清洗挖掘
+可以不构建一行代码，创建一个解决方案
+
+目的就是用各种数据源之间提取，转换，和加载数据，以任何你能想到的编程方式更改数据
+
+> 收集和清理来自不用数据来源的数据，并将数据加载到数据仓库等目的地通常非常复杂和繁琐
+  intergration Services 使用控制流引擎来管理工作流，数据流引擎来管理数据通道
+
+
+### Integreation  Service  包括的内容
+
+* 用于生成和调试包的图形工具和向导
+* 执行工作流功能，如FTP操作，执行SQL 语句和发送电子邮件
+* 提取和加载数据的源和目标，如处理文件，复制数据库对象等
+* 用于清理,聚合，合并，复制数据库的转换
+* 一个管理包执行和存储的数据库
+* 用于对Integration Service 对象模型编程的应用程序编程接口（APIs）
+* 
+
+PLM 系统的概念和作用
+Product  lifecycycle management  是一种用于管理产品生命周期的软件系统，它涵盖了产品的设计，开发，制造，销售，维护等各个阶段。并提供了相关数据流程和集成的协调
+
+常见的PLM 产品有：
+1. Siemens Teamcenter
+2. Dassaults Enovia
+3. SAP PLM
+4. Oracle Agile PLM
+5. Aras innovator   是一种开源的PLM软件平台
+
+### 几个分析工具
+
+1. 类似Analysis  Services 的开源工具
+* Apache Kylin: 这是一个开源的OLAP引擎
+* Apache Palo 开源的多维数据存储分析引擎
+2. 类似 integration Services 的开源工具
+* Apache NIFI   强大数据流处理工具
+* Talend Open  stuido  广泛使用的开源ETL 工具
+3. 类似 Report Services 的
+* Matabase  简易的开源商业智能工具
+* Superset   功能丰富的开源数据探索和可视化平台
+
+
+## 2023年12月01日  星期六  
+
+学习一下 防护墙的NAT源策略
+
