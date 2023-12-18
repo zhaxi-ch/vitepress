@@ -25,9 +25,31 @@
 21. distribute 美[dɪˈstrɪbjuːt]  n  分配    distributed adj 分布式
 22. stack   美[stæk]      n 堆
 23. innovate  美[ˈɪnəveɪt]  n 创新，改革
-24. 
+24. Architecture 美[ˈɑːrkɪtektʃər] n 结构
+25. Robotic 美[roʊˈbɑːtɪk]  adj  机器人的
+26. privilege 美[ˈprɪvəlɪdʒ] n 特权，荣幸
+
 :::
 
+
+
+
+
+
+
+
+
+
+
+### 知识点：
+1. 熟悉RPA
+RPA（Robotic Process Automation，机器人流程自动化）是一种自动化技术，旨在通过编程和自动化工具，实现一系列业务流程的自动化。RPA 技术可以应用于各种场景，如文档处理、数据处理、自动化测试、客户服务、财务处理等。
+
+### 非标自动化 和视觉方向
+1. 熟悉详细相机和3D传感器
+2. 了解数据传输，通信常用协议的实现方法
+3. 了解自动化设备视觉硬件选项与视觉方案评估
+4. 熟悉Halcon /OPENCV 
 
 
 
