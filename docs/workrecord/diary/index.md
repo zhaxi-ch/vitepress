@@ -667,5 +667,7 @@ MES   manafacture execution  system 制造执行系统 ：在制造业中用于�
 2. 多系统集成接口
 3. 熟悉串口，socket，modubs，MQTT等通信协议
 
+## 2023年12月20日  星期三
+socket 网络通信是通过socket实现的， 
 
 # 2024年1月
