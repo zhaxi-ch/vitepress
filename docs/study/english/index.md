@@ -28,32 +28,11 @@
 24. Architecture 美[ˈɑːrkɪtektʃər] n 结构
 25. Robotic 美[roʊˈbɑːtɪk]  adj  机器人的
 26. privilege 美[ˈprɪvəlɪdʒ] n 特权，荣幸
-27. Association  
+27. Association 美[əˌsəʊʃiˈeɪʃn]  n 协会
 
 :::
 
-
-
-
-
-
-
-
-
-
-
-### 知识点：
-1. 熟悉RPA
-RPA（Robotic Process Automation，机器人流程自动化）是一种自动化技术，旨在通过编程和自动化工具，实现一系列业务流程的自动化。RPA 技术可以应用于各种场景，如文档处理、数据处理、自动化测试、客户服务、财务处理等。
-
-### 非标自动化 和视觉方向
-1. 熟悉详细相机和3D传感器
-2. 了解数据传输，通信常用协议的实现方法
-3. 了解自动化设备视觉硬件选项与视觉方案评估
-4. 熟悉Halcon /OPENCV 
-
-
-
+``` 单词
 1.transparent   adj.   透明的;清澈的;易识破的;易看穿的;显而易见的;易懂的  [trænsˈpærənt] 
 2.overflow:   漫出;溢出
 3.repeat  v.	重复; 重说; 重写; 重做; 重新推出; 重复发生; 再次发生;
@@ -209,11 +188,17 @@ RPA（Robotic Process Automation，机器人流程自动化）是一种自动化
 149. scalar  英[ˈskeɪlə(r)]  n 数量
 150. Tenant   	美[ˈtenənt]  n 房客，租户
 151. Extract  美[ˈekstrækt , ɪkˈstrækt]  vt.	提取; 获得，得到
+152. prober  英[ˈprəʊbə(r)]  n.	探针; 探针式仪器;
+153. overview  英[ˈəʊvəvjuː]  n.	概观; 概述; 综述; 全貌;
+154. annotation  英[ˌænəˈteɪʃn]  n.	注释; 注释符号; 注释符号;
+155. inspector  英[ɪnˈspektə(r)]  n.	检查员; 检查官; 检查所;
+156. kick   英[kɪk]  n.	踢; 踢腿; 踢球; 踢球;
+157. identified      英[ˈaɪdəntɪfaɪd]  adj.	确定的; 确认的; 已确定的;
+158. generic  英[dʒəˈnerɪk]  adj.	一般的; 普遍的; 普通的;
 
 
 
-
-
+```
 
  
 

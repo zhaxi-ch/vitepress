@@ -67,3 +67,160 @@ quay.io
 registry-1.docker.io    
 registry.k8s.io    
 dl.k8s.io    
+
+## 使用 Prometheus 监控Mysql 的数据库
+    Vscode 打开的时候报错
+![报错图片](./Vscode终端报错.png)
+
+解决方法:设置这个地方的方式
+![报错图片](./terminal.integrated.defaultProfile.png)
+
+
+### 1. 安装mysql-exporter 的程序
+
+> 参考资料
+ mysql_exporter使用、采集器源码： https://github.com/prometheus-community/mysql_exporter 
+Mysql简略仪表盘：https://grafana.com/grafana/dashboards/11074   
+更多、更高级的mysql采集指标：https://github.com/prometheus-community/mysql_exporter/tree/main/contrib
+ mysql 对象监控 参考：https://github.com/prometheus-community/mysql_exporter/tree/main/contrib
+
+### 2. 下载文件，并且运行
+
+
+### 3.将这个MYSQL exporter文件设置成一个程序，后台进行运行
+```
+272  tar xvfz mysqld_exporter-0.16.0.linux-amd64.tar.gz 
+274  cd mysqld_exporter-0.16.0.linux-amd64/
+创建systemd 服务单元
+进行系统的服务的创建
+sudo vi /etc/systemd/system/mysqld_exporter.service
+
+[Unit]
+Description=MySQL Exporter
+After=network.target
+
+[Service]
+ExecStart=/home/datad2/mysqld_exporter -config.my-cnf=.my.cnf
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
+// 启动服务
+sudo systemctl start mysqld_exporter
+// 查看服务状态
+systemctl  status  mysqld_exporter.service
+// 开机自启
+sudo systemctl enable mysqld_exporter 
+```
+sudo netstat -tunlp | grep 9104
+
+ 执行mysql_exporter -config.my-cnf=.my.cnf 的时候报错
+
+ 手动执行命令
+ ./mysqld_exporter --config.my-cnf=/home/data2/mysql_exporter/mysql.cnf
+ ./home/data2/mysql_exporter/mysqld_exporter --config.my-cnf=/home/data2/mysql_exporter/mysql.cnf
+系统服务的文件: 特别注意文件目录的正确性
+root@ubuntuser:/etc/systemd/system# cat mysqld_exporter.service
+[Unit]
+Description=MySQL Exporter
+After=network.target
+
+[Service]
+ExecStart=/home/data2/mysqld_exporter/mysqld_exporter --config.my-cnf=/home/data2/mysqld_exporter/mysql.cnf
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.targe
+root@ubuntuser:/etc/systemd/system#
+
+
+
+
+
+
+
+
+
+4. 通过docker 来运行 mysql_exporter 
+
+[client]
+user = exporter
+password = 2024N
+host = 172.18.0.9(配置docker中的数据库的地址)
+port = 3306
+
+
+```
+
+
+docker pull prom/mysqld-exporter
+docker run -d -p 9104:9104 -e DATA_SOURCE_NAME="exporter:123456@tcp(192.168.6.223:3306)/" prom/mysqld-exporter
+```
+但是有个问题，docker hub 一直拉取镜像总是失败
+
+
+
+
+### 1. 安装black-exporter 的程序
+
+#### 1.1 使用nssm 来进行服务管理
+> nssm 是一款不错的服务助手。srvany 以及其他服务助手程序很糟糕，因为它们无法处理作为服务运行的应用程序出现的故障。如果你使用这类程序，
+  可能会看到服务显示已启动，但实际上应用程序已经崩溃。nssm 会监控正在运行的服务，一旦服务崩溃就会重启它。使用 nssm，你就能知道，如果一个服务显示正在运行，那它确实是在运行。另外，如果你的应用程序表现良好，你可以配置 nssm，让它无需承担重启应用程序的责任，而是让 Windows 来处理恢复操作
+
+
+```
+# 创建服务
+nssm install black_exporter   C:\software\blackbox_exporter\black_exporter.exe
+
+### 删除指定的服务
+nssm remove black_exporter
+
+```
+由于blackbox_exporter 是一个黑盒监控，且安装在不同的主机上，修改配置如下：
+
+1.检查promethus配置文件的命令
+promtool check config /path/to/your/prometheus.yml
+2.热更新配置文件的更改
+
+3.
+curl -X POST http://127.0.0.1:9090/-/reload
+
+4.查询prometheus 的版本命令
+prometheus --version
+5. Grafana 的模板的ID 是 11074  blackbox exporter 的模板ID是 9172
+
+黑盒监控是以故障为导向当故障发生时，黑盒监控能快速发现故障。
+白盒监控则侧重于主动发现或者预测潜在的问题
+```
+
+params:
+      module: [icmp]  #plling
+    file_sd_configs:
+    - files: ['/usr/local/prometheus/sd_config/hk.yml']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 192.168.6.247:9115
+
+```
+另一个文件：
+
+ cat sd_config/hk.yml
+- targets: ['128.14.237.64']
+  labels:
+    HK: '台湾台北'
+
+     static_configs:
+      - targets:
+        - 192.168.0.125 # 要探测的目标主机，例如192.168.0.51
+        - 172.16.20.211
+        - 172.16.25.113
+        - 172.16.25.113
+        - 172.16.24.2
+###  使用
